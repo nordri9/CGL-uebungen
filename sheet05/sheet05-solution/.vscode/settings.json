@@ -1,0 +1,12 @@
+{
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.latex.recipe.default": "lastUsed",
+  "latex-workshop.latex.outDir": "output",
+  "latex-workshop.latex.clean.smerubfolder.enabled": false,
+  "files.autoSaveWorkspaceFilesOnly": false,
+  "files.autoSave": "afterDelay",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "files.autoSaveDelay": 10,
+  "files.autoSaveWhenNoErrors": true
+}

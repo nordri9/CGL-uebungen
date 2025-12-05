@@ -1,0 +1,62 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{random}
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot}\PYG{+w}{ }\PYG{k}{as}\PYG{+w}{ }\PYG{n+nn}{plt}
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{numpy}\PYG{+w}{ }\PYG{k}{as}\PYG{+w}{ }\PYG{n+nn}{np}
+
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{generate\PYGZus{}random\PYGZus{}point\PYGZus{}in\PYGZus{}square}\PYG{p}{(}\PYG{n}{length}\PYG{p}{)}\PYG{p}{:}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{    Generate a random point in a square of a given side length centered around the origin with the sides aligned with x\PYGZhy{} and y\PYGZhy{}axis.}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{k}{return} \PYG{n+nb}{tuple}\PYG{p}{(}\PYG{p}{[}\PYG{n}{length}\PYG{o}{*}\PYG{n}{random}\PYG{o}{.}\PYG{n}{uniform}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.5}\PYG{p}{,} \PYG{l+m+mf}{0.5}\PYG{p}{)}\PYG{p}{,} \PYG{n}{length}\PYG{o}{*}\PYG{n}{random}\PYG{o}{.}\PYG{n}{uniform}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.5}\PYG{p}{,} \PYG{l+m+mf}{0.5}\PYG{p}{)}\PYG{p}{]}\PYG{p}{)}
+
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{distance}\PYG{p}{(}\PYG{n}{p1}\PYG{p}{,} \PYG{n}{p2}\PYG{p}{)}\PYG{p}{:}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{    Measures the Euclidean distance between the points p1 and p2 in 2D.}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{a} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{p1}\PYG{p}{)}
+    \PYG{n}{b} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{p2}\PYG{p}{)}
+    \PYG{n}{d} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{norm}\PYG{p}{(}\PYG{n}{b}\PYG{o}{\PYGZhy{}}\PYG{n}{a}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{d}
+
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{point\PYGZus{}in\PYGZus{}circle}\PYG{p}{(}\PYG{n}{p}\PYG{p}{,} \PYG{n}{center}\PYG{o}{=}\PYG{k+kc}{None}\PYG{p}{,} \PYG{n}{radius}\PYG{o}{=}\PYG{k+kc}{None}\PYG{p}{)}\PYG{p}{:}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{    Checks if the provided point p lies in a circle of a given radius around the provided center.}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{p} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)}
+    \PYG{n}{center} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{center}\PYG{p}{)}
+    \PYG{n}{d} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{norm}\PYG{p}{(}\PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{center}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{d} \PYG{o}{\PYGZlt{}} \PYG{n}{radius}\PYG{p}{:}
+        \PYG{k}{return} \PYG{k+kc}{True}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{k}{return} \PYG{k+kc}{False}
+
+
+\PYG{c+c1}{\PYGZsh{} TODO: generate a list of 1000 random points in a square of side length 2.0 using generate\PYGZus{}random\PYGZus{}point\PYGZus{}in\PYGZus{}square and list comprehension}
+\PYG{n}{N} \PYG{o}{=} \PYG{l+m+mi}{1000}
+\PYG{n}{full\PYGZus{}list\PYGZus{}of\PYGZus{}points} \PYG{o}{=} \PYG{p}{[}\PYG{n}{generate\PYGZus{}random\PYGZus{}point\PYGZus{}in\PYGZus{}square}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{k}{for} \PYG{n}{\PYGZus{}} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}\PYG{p}{]}
+
+\PYG{c+c1}{\PYGZsh{} TODO: generate a list of those points in full\PYGZus{}list\PYGZus{}of\PYGZus{}points that are within a radius of 1.0 of the origin (again using list comprehension)}
+\PYG{n}{filtered\PYGZus{}list\PYGZus{}of\PYGZus{}points} \PYG{o}{=} \PYG{p}{[}
+    \PYG{n}{point} \PYG{k}{for} \PYG{n}{point} \PYG{o+ow}{in} \PYG{n}{full\PYGZus{}list\PYGZus{}of\PYGZus{}points} \PYG{k}{if} \PYG{n}{point\PYGZus{}in\PYGZus{}circle}\PYG{p}{(}\PYG{n}{point}\PYG{p}{,} \PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{)}\PYG{p}{]}
+
+\PYG{c+c1}{\PYGZsh{} TODO: print the ratio of the number of points in filtered\PYGZus{}list\PYGZus{}of\PYGZus{}points to the total number of generated points}
+\PYG{n}{N\PYGZus{}filtered} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{filtered\PYGZus{}list\PYGZus{}of\PYGZus{}points}\PYG{p}{)}
+\PYG{n}{ratio} \PYG{o}{=} \PYG{n}{N\PYGZus{}filtered}\PYG{o}{/}\PYG{n}{N}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ratio}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{ratio}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} TODO: Generate separate lists of the x\PYGZhy{} and y\PYGZhy{}values of full\PYGZus{}list\PYGZus{}of\PYGZus{}points and filtered\PYGZus{}list\PYGZus{}of\PYGZus{}points}
+\PYG{n}{x\PYGZus{}values\PYGZus{}full} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{full\PYGZus{}list\PYGZus{}of\PYGZus{}points}\PYG{p}{)}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}
+\PYG{n}{y\PYGZus{}values\PYGZus{}full} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{full\PYGZus{}list\PYGZus{}of\PYGZus{}points}\PYG{p}{)}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}
+
+\PYG{n}{x\PYGZus{}values\PYGZus{}filtered} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{filtered\PYGZus{}list\PYGZus{}of\PYGZus{}points}\PYG{p}{)}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}
+\PYG{n}{y\PYGZus{}values\PYGZus{}filtered} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{filtered\PYGZus{}list\PYGZus{}of\PYGZus{}points}\PYG{p}{)}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}
+
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{x\PYGZus{}values\PYGZus{}full}\PYG{p}{,} \PYG{n}{y\PYGZus{}values\PYGZus{}full}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{x\PYGZus{}values\PYGZus{}filtered}\PYG{p}{,} \PYG{n}{y\PYGZus{}values\PYGZus{}filtered}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{axis}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{equal}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{pi\PYGZus{}montecarlo\PYGZus{}plot.png}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+\end{MintedVerbatim}

@@ -1,0 +1,14 @@
+\begin{thebibliography}{1}
+
+\bibitem{biamonte_quantum_2017}
+Jacob Biamonte, Peter Wittek, Nicola Pancotti, Patrick Rebentrost, Nathan Wiebe, and Seth Lloyd.
+\newblock Quantum {Machine} {Learning}.
+\newblock {\em Nature}, 549(7671):195--202, September 2017.
+\newblock arXiv:1611.09347 [quant-ph].
+
+\bibitem{demtroder_experimentalphysik_2021}
+Wolfgang Demtröder.
+\newblock {\em Experimentalphysik 1}.
+\newblock Springer, 2021.
+
+\end{thebibliography}

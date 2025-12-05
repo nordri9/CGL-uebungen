@@ -1,0 +1,102 @@
+\documentclass{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{siunitx}
+\sisetup{
+  per-mode=symbol,
+  separate-uncertainty
+}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdfpagemode=FullScreen,
+    }
+\usepackage{authblk}
+
+\title{Title}
+
+\author[1]{Robin Kühnberger}
+\author[2]{Felix Naraschewski}
+
+\affil[1]{University Stuttgart}
+\affil[2]{University Stuttgart}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{section0}
+
+\subsection*{Floats}
+Floats wie figure und table werden von \LaTeX{} automatisch so platziert, dass ein guter Seitenumbruch und ein sauberer Textfluss entstehen. Sie stehen daher nicht zwingend an der Stelle im Code.
+\subsubsection*{Positionsparameter}
+\begin{itemize}
+    \item \textbf{[h]} – here: möglichst an der aktuellen Stelle
+    \item \textbf{[t]} – top: am Seitenanfang
+    \item \textbf{[b]} – bottom: am Seitenende
+    \item \textbf{[p]} – page: auf einer eigenen Float-Seite
+    \item \textbf{[H]} – genau hier (erfordert \texttt{\textbackslash usepackage\{float\}})
+\end{itemize}
+
+
+\subsection{section1}
+\subsubsection{section2}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{starstek.png}
+	\caption{United federation of planets - Starfleet Command Logo}
+	\label{img:starfleet_command}
+\end{figure}
+
+\begin{equation}
+\begin{aligned}
+    R_{\mathrm{\mu \nu}} - \frac{1}{2}g_{\mathrm{\mu \nu}}=\frac{8 \pi G}{c^{4}}T_{\mathrm{\mu \nu}} \\
+    \sum_{i=1}^{n} i = \frac{n(n+1)}{2}
+\label{eq:gleichung0}
+\end{aligned}
+\end{equation}
+
+\begin{table}[!ht]
+    \caption{Bekannte Raumschiffe aus Star Trek.}
+    \centering
+    \begin{tabular}{|l||l|l|}
+        \hline
+        \textbf{Raumschiff}         & \textbf{Maximaler-Warp-Faktor} & \textbf{Kapitän}                 \\
+        \hline
+        USS Enterprise (NCC-1701)   & Warp 9.6                       & James T. Kirk                    \\
+        \hline
+        USS Enterprise (NCC-1701-D) & Warp 9.8                       & Jean-Luc Picard                  \\
+        \hline
+        USS Voyager (NCC-74656)     & Warp 9.975                     & Kathryn Janeway                  \\
+        \hline
+        USS Defiant (NX-74205)      & Warp 9.5                       & Benjamin Sisko                   \\
+        \hline
+        USS Discovery (NCC-1031)    & Warp 9.9                       & Gabriel Lorca / Christopher Pike \\
+        \hline
+    \end{tabular}
+    \label{tab:starships}
+\end{table}
+Die Abbildung \ref{img:starfleet_command} zeigt das Logo von Starfleet Command. (They really exist!)\\
+Raumschiffe sind toll \ref{tab:starships}\\
+Die Gleichungen \eqref{eq:gleichung0} sind zufällig ausgewählt.\\
+
+Die Lichtgeschwindigkeit \cite{einstein1966einstein} beträgt \(\num{2.99792458e8}\,\si{\meter\per\second}\),
+die Elementarladung \cite{schopper1935neubestimmung} hat den Wert \(\num{1.602176634e-19}\,\si{\coulomb}\)
+und die Planck-Konstante \cite{steiner2012history} ist \(\num{6.62607015e-34}\,\si{\joule\second}\).
+
+\section*{Quellen}
+\bibliographystyle{plain}
+\bibliography{bibliography}
+
+\listoffigures
+\listoftables
+
+\end{document}
