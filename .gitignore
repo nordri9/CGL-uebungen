@@ -1,0 +1,21 @@
+output/chapters
+
+LaTeX-Vorlage.aux
+LaTeX-Vorlage.bbl
+LaTeX-Vorlage.log
+LaTeX-Vorlage.out
+LaTeX-Vorlage.synctex.gz
+LaTeX-Vorlage.toc
+pdflatex12879.fls
+indent.log
+LaTex-Vorlage.pdf
+
+calculations/math_utils/__pycache__
+
+# LaTeX generated files
+output/*.pdf
+output/*.aux
+output/*.log
+output/*.synctex
+output/*.synctex(busy)
+output/*.synctex.gz
