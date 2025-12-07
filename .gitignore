@@ -1,21 +1,24 @@
-output/chapters
+# LaTeX build files
+*.aux
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+*.fls
+*.fdb_latexmk
 
-LaTeX-Vorlage.aux
-LaTeX-Vorlage.bbl
-LaTeX-Vorlage.log
-LaTeX-Vorlage.out
-LaTeX-Vorlage.synctex.gz
-LaTeX-Vorlage.toc
-pdflatex12879.fls
-indent.log
-LaTex-Vorlage.pdf
+# PDF output
+*.pdf
 
-calculations/math_utils/__pycache__
+# Minted (Python syntax highlighting)
+_minted/
+*.pyg
 
-# LaTeX generated files
-output/*.pdf
-output/*.aux
-output/*.log
-output/*.synctex
-output/*.synctex(busy)
-output/*.synctex.gz
+# Temporary directories
+latex.out/
+build/
+output/
