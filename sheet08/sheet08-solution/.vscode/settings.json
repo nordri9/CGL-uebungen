@@ -32,5 +32,6 @@
       "source.organizeImports.ruff": "explicit"
     }
   },
-  "editor.inlineSuggest.syntaxHighlightingEnabled": false
+  "editor.inlineSuggest.syntaxHighlightingEnabled": false,
+  "files.autoSave": "onFocusChange"
 }

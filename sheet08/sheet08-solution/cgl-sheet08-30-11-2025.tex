@@ -21,7 +21,7 @@
 
 \usepackage{minted}
 
-\title{CGL-sheet07}
+\title{CGL-sheet08}
 
 \author[1]{Robin Kühnberger}
 \author[2]{Felix Naraschewski}
@@ -42,20 +42,45 @@
 
 \section{Plotten einer gedämpften harmonischen Schwingung mit matplotlib und argparse}
 
+\subsection{Teil 1: Implementierung und Darstellung}
+
 \inputminted[breaklines]{python3}{damped_oscillation.py}
 
 \begin{figure}[H]
-	\centering
-	\includegraphics[width=1\textwidth]{damped_oscillation.png}
-	\caption{Scatter Plot}
-	\label{img:01}
+  \centering
+  \includegraphics[width=1\textwidth]{damped_oscillation.png}
+  \caption{Scatter Plot}
+  \label{img:01}
 \end{figure}
 
+\subsection{Teil 2: Erweiterung mit argparse (Kommandozeilen-Argumente)}
 
+\inputminted[breaklines]{python3}{damped_oscillator_argparse.py}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{damped_oscillator_argparse.png}
+  \caption{Colorbar Plot}
+  \label{img:02}
+\end{figure}
 
 \section{Array-Slicing}
 
 \inputminted[breaklines]{python3}{array-slicing.py}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{array-slicing.png}
+  \caption{Colorbar Plot}
+  \label{img:03}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{array-slicing-sad.png}
+  \caption{Colorbar Plot}
+  \label{img:04}
+\end{figure}
 
 
 %\section*{Quellen}
