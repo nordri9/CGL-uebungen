@@ -27,10 +27,7 @@ def point_in_circle(p, center=None, radius=None):
     p = np.array(p)
     center = np.array(center)
     d = np.linalg.norm(p - center)
-    if d < radius:
-        return True
-    else:
-        return False
+    return d < radius
 
 
 # TODO: generate a list of 1000 random points in a square of side length 2.0 using generate_random_point_in_square and list comprehension
@@ -38,7 +35,8 @@ N = 1000
 full_list_of_points = [generate_random_point_in_square(2) for _ in range(N)]
 
 # TODO: generate a list of those points in full_list_of_points that are within a radius of 1.0 of the origin (again using list comprehension)
-filtered_list_of_points = [point for point in full_list_of_points if point_in_circle(point, (0, 0), 1.0)]
+filtered_list_of_points = [
+    point for point in full_list_of_points if point_in_circle(point, (0, 0), 1.0)]
 
 # TODO: print the ratio of the number of points in filtered_list_of_points to the total number of generated points
 N_filtered = len(filtered_list_of_points)
