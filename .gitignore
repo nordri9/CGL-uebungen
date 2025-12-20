@@ -11,8 +11,10 @@
 *.fls
 *.fdb_latexmk
 
-# PDF output
-*.pdf
+# PDF output (Only in specific build folders)
+latex.out/**/*.pdf
+build/**/*.pdf
+output/**/*.pdf
 
 # Minted (Python syntax highlighting)
 _minted/

@@ -6,6 +6,6 @@ print(np.size(data))
 print(data[0, 1])
 print(data[-1, :])
 # print(data[:,10]) #gibt eine Fehlermeldung aus, da wir nur 2 Spalten haben
-print(data[50:59])
+print(data[50:60])
 print(data[:, 0])
-print(np.mean(data[50:99, 0]))
+print(np.mean(data[50:100, 0]))
