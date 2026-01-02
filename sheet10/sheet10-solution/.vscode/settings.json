@@ -24,7 +24,7 @@
       ]
     }
   ],
-  "latex-workshop.formatting.latex": "latexindent",
+  "latex-workshop.formatting.latex": "tex-fmt",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "[python]": {
