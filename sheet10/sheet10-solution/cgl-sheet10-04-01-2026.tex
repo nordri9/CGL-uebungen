@@ -48,6 +48,23 @@
 
 \section{Fehleranalyse einer gedämpften Schwingun}
 
+\inputminted[breaklines]{python3}{fehleranalyse.py}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{fehleranalyse-1.pdf}
+  \caption{Gedämpfte Schwingung mit Unsicherheit in A}
+  \label{img:02}
+\end{figure}
+Im ersten Fall dominiert die Unsicherheit in der Amplitude. Da dieser proportional zur Amplitude ist und mit abklingender Amplitude kleiner wird.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{fehleranalyse-2.pdf}
+  \caption{Gedämpfte Schwingung mit Unsicherheit in $\omega$}
+  \label{img:03}
+\end{figure}
+Im zweiten Fall entsteht eine phasenartige Unsicherheit kleine Unsicherheiten in $\omega$ führen bei größeren Zeiten zu zunehmender Phasenverschiebung, was zu einem strukturierten, teils wachsenden Unsicherheitsband führt.
 %\section*{Quellen}
 %\bibliographystyle{plain}
 %\bibliography{bibliography}

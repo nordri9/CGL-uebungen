@@ -1,7 +1,6 @@
 from random import randrange
 from itertools import permutations
 import math
-
 import matplotlib.pyplot as plt
 
 
