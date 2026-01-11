@@ -19,9 +19,9 @@
 }
 \usepackage{authblk}
 
-\usepackage{minted}
+\usepackage[outputdir=output]{minted}
 
-\title{CGL-sheet10}
+\title{CGL-sheet11}
 
 \author[1]{Robin Kühnberger}
 \author[2]{Felix Naraschewski}
@@ -51,8 +51,15 @@
 Die Folge $\frac{a_n}{a_{n-1}}$ konvergiert für $n \to \infty$ zu $\approx 1,6180$ was dem goldenen Schnitt $\phi$ entspricht.
 
 \section{Quicksort}
+Dieses Quicksort (\href{https://de.wikipedia.org/wiki/Quicksort#Pseudocode}{Wikipedia}) benutzt ein Hoare-ähnliches Partitionieren mit zwei Zeigern, die von links und rechts aufeinander zulaufen, und versucht Elemente durch gegenseitiges Vertauschen “von beiden Seiten” um den Pivot herum anzuordnen. Bei großen $n$ treten daher Fehler auf.
 
 \inputminted[breaklines]{python3}{quicksort.py}
+
+Die Lomuto-Variante läuft stattdessen mit einem Zeiger durch das Intervall und hält einen zweiten Zeiger für die Grenze “alle Elemente ≤ Pivot”, wobei der Pivot am Ende immer explizit an seine endgültige Position getauscht wird und somit nach der Partition garantiert nicht mehr in einem rekursiven Aufruf vorkommt. Funktioniert auch für große $n$.
+
+\inputminted[breaklines]{python3}{quicksort_lomuto.py}
+
+
 
 %\section*{Quellen}
 %\bibliographystyle{plain}
