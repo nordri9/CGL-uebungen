@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 # Part 1
 v = np.array([[1],
-              [1]])          # Spaltenvektor [a2; a1]
+              [1]])
 
 M = np.array([[1, 1],
               [1, 0]])

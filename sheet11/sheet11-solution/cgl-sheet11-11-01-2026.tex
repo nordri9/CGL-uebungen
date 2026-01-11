@@ -19,7 +19,7 @@
 }
 \usepackage{authblk}
 
-\usepackage[outputdir=output]{minted}
+\usepackage{minted}
 
 \title{CGL-sheet11}
 
@@ -37,6 +37,73 @@
 
 \section{Erstellen einer Vektorgrafik}
 
+% -------------------------
+% Experimentbeschreibung
+% -------------------------
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{vektorgrafik_1.png}
+  %\caption{}
+  \label{img:01}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{vektorgrafik_2.png}
+  %\caption{}
+  \label{img:02}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{vektorgrafik_3.png}
+  %\caption{}
+  \label{img:03}
+\end{figure}
+
+\section*{Versuch: Schwingungsdauer eines Fadenpendels}
+
+Das Experiment zeigt den Zusammenhang
+\[
+  T \sim \sqrt{l}
+\]
+der Periodendauer \(T\) eines Fadenpendels bei kleinen Auslenkungswinkeln.
+
+\subsection*{Durchführung}
+
+\begin{itemize}
+  \item Aufhängen eines Fadenpendels mit der Fadenlänge \(l_1 = 1\,\mathrm{m}\) und der Masse \(m = 0{,}1\,\mathrm{kg}\)
+  \item Auslenkung des Pendels um einen kleinen Winkel \(\varphi < 10^\circ\) (hinreichend klein für Näherung)
+  \item Messung der Zeit für fünf vollständige Schwingungen mit einer Stoppuhr (\(T_5\))
+  \item Halbierung der Fadenlänge auf \(l_2 = 0{,}5\,\mathrm{m}\)
+  \item Erneute Messung der Zeit für fünf Schwingungen
+\end{itemize}
+
+\subsection*{Wichtige Daten}
+
+\begin{itemize}
+  \item Fadenlänge: \(l = 1\,\mathrm{m}\) bzw. \(0{,}5\,\mathrm{m}\)
+  \item Masse: \(m = 0{,}1\,\mathrm{kg}\)
+  \item Auslenkwinkel: \(\varphi < 14^\circ\)
+  \item Anzahl der gemessenen Schwingungen: \(5\)
+\end{itemize}
+
+\subsection*{Ergebnis}
+
+\begin{itemize}
+  \item Die Periodendauer eines Fadenpendels hängt von der Fadenlänge ab
+  \item Für kleine Auslenkungen gilt die Näherung \(\sin(\varphi) \approx \varphi\)
+  \item Die Periodendauer eines Fadenpendels ist gegeben durch:
+    \[
+      T = 2\pi \sqrt{\frac{l}{g}}
+    \]
+  \item Aus der Messung von fünf Schwingungen folgt:
+    \[
+      T = \frac{T_5}{5}
+    \]
+\end{itemize}
+
 \section{Lineare Algebra mit NumPy: Fibonacci-Folge}
 
 \inputminted[breaklines]{python3}{fibonacci.py}
@@ -45,21 +112,19 @@
   \centering
   \includegraphics[width=1\textwidth]{fibonacci.pdf}
   \caption{Golden ratio}
-  \label{img:01}
+  \label{img:04}
 \end{figure}
 
 Die Folge $\frac{a_n}{a_{n-1}}$ konvergiert für $n \to \infty$ zu $\approx 1,6180$ was dem goldenen Schnitt $\phi$ entspricht.
 
 \section{Quicksort}
-Dieses Quicksort (\href{https://de.wikipedia.org/wiki/Quicksort#Pseudocode}{Wikipedia}) benutzt ein Hoare-ähnliches Partitionieren mit zwei Zeigern, die von links und rechts aufeinander zulaufen, und versucht Elemente durch gegenseitiges Vertauschen “von beiden Seiten” um den Pivot herum anzuordnen. Bei großen $n$ treten daher Fehler auf.
+Dieses Quicksort (\href{https://de.wikipedia.org/wiki/Quicksort#Pseudocode}{Wikipedia}) benutzt ein Hoare-ähnliches Partitionieren mit zwei Zeigern, die von links und rechts aufeinander zulaufen, und versucht Elemente durch gegenseitiges Vertauschen "von beiden Seiten" um den Pivot herum anzuordnen. Bei großen $n$ treten daher Fehler auf.
 
 \inputminted[breaklines]{python3}{quicksort.py}
 
-Die Lomuto-Variante läuft stattdessen mit einem Zeiger durch das Intervall und hält einen zweiten Zeiger für die Grenze “alle Elemente ≤ Pivot”, wobei der Pivot am Ende immer explizit an seine endgültige Position getauscht wird und somit nach der Partition garantiert nicht mehr in einem rekursiven Aufruf vorkommt. Funktioniert auch für große $n$.
+Die Lomuto-Variante läuft stattdessen mit einem Zeiger durch das Intervall und hält einen zweiten Zeiger für die Grenze “alle Elemente $\leq$  Pivot”, wobei der Pivot am Ende immer explizit an seine endgültige Position getauscht wird und somit nach der Partition garantiert nicht mehr in einem rekursiven Aufruf vorkommt. Funktioniert auch für große $n$.
 
 \inputminted[breaklines]{python3}{quicksort_lomuto.py}
-
-
 
 %\section*{Quellen}
 %\bibliographystyle{plain}
