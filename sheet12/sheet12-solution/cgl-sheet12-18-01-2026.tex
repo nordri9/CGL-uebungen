@@ -1,0 +1,95 @@
+\documentclass{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{siunitx}
+\sisetup{
+  per-mode=symbol,
+  separate-uncertainty
+}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,
+  urlcolor=cyan,
+  pdfpagemode=FullScreen,
+}
+\usepackage{authblk}
+
+\usepackage{minted}
+\usepackage{xcolor}
+
+\title{CGL-sheet12}
+
+\author[1]{Robin Kühnberger}
+\author[2]{Felix Naraschewski}
+
+\affil[1]{University Stuttgart}
+\affil[2]{University Stuttgart}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Datentypen in C++}
+
+\inputminted[breaklines, linenos, bgcolor=gray!10]{cpp}{datentypen.cpp}
+
+\section{Zahlen Raten mit C++}
+
+\begin{enumerate}
+  \item \textbf{Präprozessor:} Verarbeitet Befehle mit \texttt{\#} (z.\,B. \texttt{\#include}), fügt Header ein und entfernt Kommentare. Das Ergebnis ist eine reine Übersetzungseinheit.
+
+  \item \textbf{Compiler:} Übersetzt den bereinigten C++-Code in Assembler-Code und prüft dabei Syntax sowie Semantik.
+
+  \item \textbf{Assembler:} Wandelt den Assembler-Code in Maschinencode (Objektdateien, \texttt{.o}) um, der vom Prozessor lesbar, aber noch nicht ausführbar ist.
+
+  \item \textbf{Linker:} Verbindet die Objektdateien mit nötigen Bibliotheken (z.\,B. für \texttt{std::cout}) zur finalen, ausführbaren Datei.
+\end{enumerate}
+
+\begin{minted}[breaklines, bgcolor=lightgray!10]{bash}
+g++ -fdiagnostics-color=always -g -Wconversion -std=c++20 -O3 /path/to/main.cpp -o /path/to/main
+\end{minted}
+
+\begin{itemize}
+  \item \textbf{Build:} Übersetzt \texttt{main.cpp} mit modernem C++20 in die ausführbare Datei \texttt{main}.
+  \item \textbf{Einstellungen:} Kombiniert maximale Geschwindigkeitsoptimierung (\texttt{-O3}) mit Debug-Informationen (\texttt{-g}).
+  \item \textbf{Sicherheit:} Aktiviert farbige Ausgaben und warnt vor potenziellen Datenverlusten bei Typumwandlungen.
+\end{itemize}
+
+\inputminted[breaklines, linenos, bgcolor=gray!10]{cpp}{zahlen-raten.cpp}
+
+\section{Funktionen in C++}
+
+\begin{minted}[breaklines, bgcolor=gray!10]{cpp}
+bool pruefeTipp(int tipp, int loesung)
+\end{minted}
+
+\begin{itemize}
+  \item \textbf{Rückgabetyp:} Der Datentyp ist \texttt{bool} (wahr/falsch).
+  \item \textbf{Anzahl Parameter:} Es werden \textbf{2} Parameter übergeben (\texttt{tipp} und \texttt{loesung}).
+\end{itemize}
+
+\inputminted[breaklines, linenos, bgcolor=gray!10]{cpp}{funktionen.cpp}
+
+%
+%\begin{figure}[H]
+%  \centering
+%  \includegraphics[width=1\textwidth]{fibonacci.pdf}
+%  \caption{Golden ratio}
+%  \label{img:04}
+%\end{figure}
+
+%\section*{Quellen}
+%\bibliographystyle{plain}
+%\bibliography{bibliography}
+
+%\listoffigures
+%\listoftables
+
+\end{document}

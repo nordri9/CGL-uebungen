@@ -1,0 +1,71 @@
+\documentclass{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{siunitx}
+\sisetup{
+  per-mode=symbol,
+  separate-uncertainty
+}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,
+  urlcolor=cyan,
+  pdfpagemode=FullScreen,
+}
+\usepackage{authblk}
+
+\usepackage{minted}
+\usepackage{xcolor}
+
+\title{CGL-sheet13}
+
+\author[1]{Robin Kühnberger}
+\author[2]{Felix Naraschewski}
+
+\affil[1]{University Stuttgart}
+\affil[2]{University Stuttgart}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Berechnung der Eulerschen Zahl mit C++}
+
+Für die Funktion \mintinline{cpp}|fakultaet(int k)| ist ein \mintinline{cpp}|long| bzw. \mintinline{cpp}|unsigned long| als Rückgabedatentyp sinvoll, da $n!$ sehr schnell wächst. Aber \mintinline{cpp}|approximate_e(int n)| kann solche großen Integer sowiso nicht nicht verarbeiten, da es nur ein \mintinline{cpp}|double| zurückgeben kann ist.
+
+\inputminted[breaklines, linenos, bgcolor=gray!10]{cpp}{e-approx.cpp}
+
+\section{Vektoren I}
+
+Die Übergabe als \mintinline{cpp}|const vector<double> &vector| ist sinnvoll, da zum einen \mintinline{cpp}|const| sicherstellt, dass die Funktion den Vektor nicht verändern kann, da die Funktion nur den Vektor ausließt. Und zum anderen wird bei sehr großen Vektoren Zeit und Speicher gespahrt, da der Verktor nich koppiert sondern nur als Referenz übergeben wird.
+
+\inputminted[breaklines, linenos, bgcolor=gray!10]{cpp}{vektoren-i.cpp}
+
+\section{Vektoren II}
+\inputminted[breaklines, linenos, bgcolor=gray!10]{cpp}{vektoren-ii.cpp}
+
+\section{Vektoren III}
+\inputminted[breaklines, linenos, bgcolor=gray!10]{cpp}{vektoren-iii.cpp}
+
+%\begin{figure}[H]
+%  \centering
+%  \includegraphics[width=1\textwidth]{fibonacci.pdf}
+%  \caption{Golden ratio}
+%  \label{img:04}
+%\end{figure}
+
+%\section*{Quellen}
+%\bibliographystyle{plain}
+%\bibliography{bibliography}
+
+%\listoffigures
+%\listoftables
+
+\end{document}

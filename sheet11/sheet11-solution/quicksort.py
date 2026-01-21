@@ -12,8 +12,8 @@ def split(left, right):
             j -= 1
         if i < j and data[i] > data[j]:
             data[i], data[j] = data[j], data[i]
-            i += 1
-            j -= 1
+            # i += 1
+            # j -= 1
     if data[i] > pivot:
         data[i], data[right] = data[right], data[i]
     else:
@@ -28,7 +28,7 @@ def quick_sort(left, right):
         quick_sort(spliter + 1, right)
 
 
-n = 10
+n = 400
 data = random.sample(range(1, n+1), n)
 print("before:", data)
 left = 0
