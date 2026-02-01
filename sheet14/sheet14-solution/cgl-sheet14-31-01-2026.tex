@@ -1,0 +1,57 @@
+\documentclass{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{siunitx}
+\usepackage{amssymb}
+\sisetup{
+  per-mode=symbol,
+  separate-uncertainty
+}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,
+  urlcolor=cyan,
+}
+\usepackage{authblk}
+
+\usepackage{minted}
+\usepackage{xcolor}
+
+\title{CGL-sheet14}
+
+\author[1]{Robin Kühnberger}
+\author[2]{Felix Naraschewski}
+
+\affil[1]{University Stuttgart}
+\affil[2]{University Stuttgart}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{}
+
+\inputminted[breaklines, linenos, bgcolor=gray!10]{cpp}{sortieralgorithmen.cpp}
+
+%\begin{figure}[H]
+%  \centering
+%  \includegraphics[width=1\textwidth]{fibonacci.pdf}
+%  \caption{Golden ratio}
+%  \label{img:04}
+%\end{figure}
+
+%\section*{Quellen}
+%\bibliographystyle{plain}
+%\bibliography{bibliography}
+
+%\listoffigures
+%\listoftables
+
+\end{document}

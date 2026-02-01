@@ -26,7 +26,7 @@ double approximate_e(int n)
 }
 int main()
 {
-    int iterationen = 20;
+    int iterationen = 12;
     // Berechne e
     double e_approx = approximate_e(iterationen);
     // Ausgabe des Ergebnisses

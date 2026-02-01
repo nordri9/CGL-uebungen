@@ -5,6 +5,7 @@
 \usepackage{amsmath}
 \usepackage{float}
 \usepackage{siunitx}
+\usepackage{amssymb}
 \sisetup{
   per-mode=symbol,
   separate-uncertainty
@@ -15,7 +16,6 @@
   linkcolor=blue,
   filecolor=magenta,
   urlcolor=cyan,
-  pdfpagemode=FullScreen,
 }
 \usepackage{authblk}
 
@@ -38,7 +38,7 @@
 
 \section{Berechnung der Eulerschen Zahl mit C++}
 
-Für die Funktion \mintinline{cpp}|fakultaet(int k)| ist ein \mintinline{cpp}|long| bzw. \mintinline{cpp}|unsigned long| als Rückgabedatentyp sinvoll, da $n!$ sehr schnell wächst. Aber \mintinline{cpp}|approximate_e(int n)| kann solche großen Integer sowiso nicht nicht verarbeiten, da es nur ein \mintinline{cpp}|double| zurückgeben kann ist.
+Für die Funktion \mintinline{cpp}|fakultaet(int k)| ist ein \mintinline{cpp}|long| bzw. \mintinline{cpp}|unsigned long| als Rückgabedatentyp sinvoll, da $n!$ schnell wächst und die $Wertemenge \in \mathbb{N}$ ist. Aber \mintinline{cpp}|approximate_e(int n)| kann solche großen Integer nicht verarbeiten, da es nur ein \mintinline{cpp}|double| zurückgeben kann, da $e \in \mathbb{R}$
 
 \inputminted[breaklines, linenos, bgcolor=gray!10]{cpp}{e-approx.cpp}
 
