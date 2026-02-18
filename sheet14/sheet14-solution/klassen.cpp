@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
-#include <cstdlib>
-#include <ctime>
+#include <cstdlib> // for rand(), srand()
+#include <ctime>   // for time()
 
 class Particle
 {
@@ -9,30 +9,60 @@ public:
     std::vector<double> position;
     std::vector<double> speed;
     double mass;
-    std::vector<double> impulse(const std::vector<double> &speed)
+
+    Particle(std::vector<double> pos, std::vector<double> spd, double m)
+        : position(pos), speed(spd), mass(m) {}
+
+    double momentum_x() const
     {
-        std::vector<double> impulse = {mass * speed[0], mass * speed[1]};
-        return impulse;
+        return mass * speed[0];
+    }
+
+    double momentum_y() const
+    {
+        return mass * speed[1];
+    }
+
+    void print(int index) const
+    {
+        std::cout << "Particle" << index << ": "
+                  << "Pos: (" << position[0] << ", " << position[1] << "), "
+                  << "Mass: " << mass << ", "
+                  << "Momentum X: " << momentum_x() << ", "
+                  << "Momentum Y: " << momentum_y()
+                  << std::endl;
     }
 };
 
-// 2. Helper function to get random double between 0.0 and 1.0
 double randomDouble()
 {
     return (double)std::rand() / RAND_MAX;
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
-
-    // Seed the random number generator once
     std::srand(std::time(0));
 
-    // Vector to store particles
     std::vector<Particle> particles;
-    int num_particles = 5;
+    int num_particles = 10;
 
-    // std::vector<Particle> test_particles = { {{std::rand() % 1, {std::rand() % 1}, {23, 3}, 4}};
-    //  std::cout << test_particles[0] << std::endl;
+    for (int i = 0; i < num_particles; ++i)
+    {
+        double px = randomDouble() * 100.0;
+        double py = randomDouble() * 100.0;
+        double vx = randomDouble() * 10.0;
+        double vy = randomDouble() * 10.0;
+        double mass = 1.0 + randomDouble() * 5.0;
+
+        particles.emplace_back(std::vector<double>{px, py},
+                               std::vector<double>{vx, vy},
+                               mass);
+    }
+
+    for (int i = 0; i < particles.size(); ++i)
+    {
+        particles[i].print(i + 1);
+    }
+
     return 0;
 }
