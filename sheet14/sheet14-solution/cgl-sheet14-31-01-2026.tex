@@ -36,17 +36,110 @@
 \maketitle
 \tableofcontents
 
-\section{}
+\section{Sortieralgorithmen in C++}
 
 \inputminted[breaklines, linenos, bgcolor=gray!10]{cpp}{sortieralgorithmen.cpp}
 
-%\begin{figure}[H]
-%  \centering
-%  \includegraphics[width=1\textwidth]{fibonacci.pdf}
-%  \caption{Golden ratio}
-%  \label{img:04}
-%\end{figure}
+\section{Klassen in C++}
 
+\inputminted[breaklines, linenos, bgcolor=gray!10]{cpp}{klassen.cpp}
+
+Ausgabe:
+
+\begin{minted}[breaklines, linenos, bgcolor=gray!10]{bash}
+[nordri9@SevenOfNine2 build]$ ./klassen 
+Particle1: Pos: (50.1155, 66.7549), Mass: 3.43475, Momentum X: 31.5407, Momentum Y: 10.7356
+Particle2: Pos: (34.0588, 68.4702), Mass: 5.23526, Momentum X: 43.5813, Momentum Y: 22.3711
+Particle3: Pos: (73.6993, 38.5444), Mass: 4.35795, Momentum X: 5.85263, Momentum Y: 14.9833
+Particle4: Pos: (88.158, 6.18728), Mass: 2.52606, Momentum X: 13.5479, Momentum Y: 10.4709
+Particle5: Pos: (83.0755, 97.7323), Mass: 4.71953, Momentum X: 42.8202, Momentum Y: 43.102
+Particle6: Pos: (31.0726, 56.3987), Mass: 3.79176, Momentum X: 16.6237, Momentum Y: 0.560955
+Particle7: Pos: (79.0511, 51.595), Mass: 5.14255, Momentum X: 11.6171, Momentum Y: 36.4501
+Particle8: Pos: (71.285, 4.9383), Mass: 3.38349, Momentum X: 17.3645, Momentum Y: 18.4505
+Particle9: Pos: (36.0264, 28.2301), Mass: 4.13059, Momentum X: 35.6115, Momentum Y: 20.4283
+Particle10: Pos: (53.3733, 37.6141), Mass: 4.95328, Momentum X: 34.0781, Momentum Y: 3.47021
+\end{minted}
+
+\section{Git Grundlagen}
+\subsection*{Vorbereitung}
+
+\begin{minted}[breaklines, linenos, bgcolor=gray!10]{bash}
+[nordri9@SevenOfNine2 sheet14-solution]$ git --version
+git version 2.52.0
+[nordri9@SevenOfNine2 sheet14-solution]$ git config --global user.name
+nordri9
+\end{minted}
+Meine Identität ist bereits gesetzt.
+
+
+\subsection*{"Forken"}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Screenshot 2026-02-01 at 13-57-59 Fork tobias-fllnr_cgl-git-uebung.png}
+  \caption{Forken}
+  \label{img:01}
+\end{figure}
+
+
+\subsection*{Clone}
+
+\begin{minted}[breaklines, linenos, bgcolor=gray!10]{bash}
+[nordri9@SevenOfNine2 projects]$ git clone https://github.com/nordri9/cgl-git-uebung.git
+Cloning into 'cgl-git-uebung'...
+remote: Enumerating objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 3 (from 1)
+Receiving objects: 100% (3/3), done.
+[nordri9@SevenOfNine2 projects]$ cd cgl-git-uebung/
+[nordri9@SevenOfNine2 cgl-git-uebung]$ ls
+hallo.txt
+\end{minted}
+
+\subsection*{Branch}
+
+\begin{minted}[breaklines, linenos, bgcolor=gray!10]{bash}
+[nordri9@SevenOfNine2 cgl-git-uebung]$ git checkout -b neues_feature
+Switched to a new branch 'neues_feature'
+\end{minted}
+
+\subsection*{Code bearbeiten und Speichern}
+\begin{minted}[breaklines, linenos, bgcolor=gray!10]{bash}
+[nordri9@SevenOfNine2 cgl-git-uebung]$ nano hallo.txt 
+[nordri9@SevenOfNine2 cgl-git-uebung]$ git add hallo.txt
+[nordri9@SevenOfNine2 cgl-git-uebung]$ git commit -m "Begrüßung angepasst"
+[neues_feature afa82f0] Begrüßung angepasst
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+\end{minted}
+
+\subsection*{Push}
+
+\begin{minted}[breaklines, linenos, bgcolor=gray!10]{bash}
+[nordri9@SevenOfNine2 cgl-git-uebung]$ git push origin neues_feature
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 268 bytes | 268.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: 
+remote: Create a pull request for 'neues_feature' on GitHub by visiting:
+remote:      https://github.com/nordri9/cgl-git-uebung/pull/new/neues_feature
+remote: 
+To https://github.com/nordri9/cgl-git-uebung.git
+ * [new branch]      neues_feature -> neues_feature
+\end{minted}
+
+\subsection*{Pull Request (PR) und Abgabe}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Screenshot 2026-02-01 at 14-18-39 nordri9_cgl-git-uebung at neues_feature.png}
+  \caption{Comparing changes}
+  \label{img:02}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Screenshot 2026-02-01 at 14-20-37.png}
+  \caption{Pull Request}
+  \label{img:03}
+\end{figure}
 %\section*{Quellen}
 %\bibliographystyle{plain}
 %\bibliography{bibliography}
