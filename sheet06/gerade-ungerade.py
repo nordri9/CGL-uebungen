@@ -12,3 +12,4 @@ def is_even(number):
 
 assert not is_even(9)
 assert is_even(10)
+assert is_even(-1)
