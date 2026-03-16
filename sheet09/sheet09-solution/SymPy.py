@@ -2,8 +2,8 @@ import sympy as sp
 import numpy as np
 import matplotlib.pyplot as plt
 
-t = sp.symbols('t', real=True)
-A = sp.symbols('A')
+t = sp.symbols("t", real=True)
+A = sp.symbols("A")
 lam = sp.symbols('lambda', positive=True, real=True)
 omega = sp.symbols('omega', positive=True, real=True)
 
@@ -36,4 +36,3 @@ plt.ylabel("Amplitude")
 plt.legend()
 plt.savefig("SymPy.pdf")
 plt.show()
-
