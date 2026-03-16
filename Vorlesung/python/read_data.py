@@ -22,16 +22,16 @@ with open(dateiname, 'r') as datei:
         print(f"Verarbeite: '{bereinigte_zeile}'")
         
         #Teile die bereinigte_zeile in Einzelteile auf
-        teile = # DEIN CODE HIER
-        
+        teile = bereinigte_zeile.split()
+
         if len(teile) == 2:
             # Wandel die Teile in Gleitkommazahlen um
-            x = # DEIN CODE HIER
-            y = # DEIN CODE HIER
-            
+            x = float(teile[0])
+            y = float(teile[1])
+
             # Speicher die Werte in den Listen x_werte und y_werte
-            # DEIN CODE HIER
-            # DEIN CODE HIER
+            x_werte.append(x)
+            y_werte.append(y)
 
 
 # 5. Am Ende alle Tupel x-y plotten
@@ -41,6 +41,7 @@ if x_werte:
     plt.figure()
     # Verwende Sie plt.scatter() um x_werte gegen y_werte zu plotten
     # DEIN CODE HIER
+    plt.scatter(x_werte, y_werte)
     
     plt.title('Messdaten aus Datei')
     plt.xlabel('X-Koordinate')

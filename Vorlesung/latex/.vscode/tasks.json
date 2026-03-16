@@ -1,0 +1,43 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			// Task 1: Create the directory
+			"label": "Create Build Dir",
+			"type": "shell",
+			"command": "mkdir",
+			"args": [
+				"-p",
+				"build"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			}
+		},
+		{
+			// Task 2: Compile (Runs Task 1 first)
+			"type": "cppbuild",
+			"label": "C/C++: g++ build active file",
+			"command": "/usr/bin/g++",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"-Wconversion",
+				"-std=c++20",
+				"-O3",
+				"${file}",
+				"-o",
+				"${fileDirname}/build/${fileBasenameNoExtension}" // Output to build/
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: /usr/bin/g++",
+			"dependsOn": "Create Build Dir" // <--- The Magic Link
+		}
+	]
+}

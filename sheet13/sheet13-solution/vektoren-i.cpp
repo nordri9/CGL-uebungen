@@ -2,10 +2,10 @@
 #include <vector>
 using namespace std;
 
-double sum_below_limit(const vector<double> &vector, double limit)
+double sum_below_limit(const vector<double> &vector0, double limit)
 {
     double summ = 0.0;
-    for (int i : vector)
+    for (int i : vector0)
     {
         if (i < limit)
         {
