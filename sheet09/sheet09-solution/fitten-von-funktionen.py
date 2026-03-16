@@ -16,7 +16,7 @@ print(f"Fit Results: Amp={param[0]:.3f}, Damping={param[1]:.3f}, Freq={param[2]:
 
 y_fit = damped_sine(x, *param)
 
-plt.plot(x, y, 'o', color='red', label="data",)
+plt.plot(x, y, 'o', color='red', label="data")
 plt.plot(x, y_fit, '-', color='blue', label="fit")
 
 plt.title("Damped Oscillation")
